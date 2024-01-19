@@ -19,7 +19,7 @@ public class MainViewController implements Initializable {
 
 
 	@FXML
-	static GridPane pruebaTile;
+	 static GridPane pruebaTile;
 
 
     

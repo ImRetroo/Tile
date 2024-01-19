@@ -41,6 +41,7 @@ System.out.println("Se inicia la funcion");
 				obstaculo.setFill(Color.BLACK);
 				if (MainViewController.pruebaTile != null) {
 				    MainViewController.pruebaTile.add(obstaculo, columna, fila);
+				    System.out.println("0");
 				} else {
 				    System.out.println("obs es null");
 				}
@@ -52,6 +53,8 @@ System.out.println("Se inicia la funcion");
 				player.setFill(Color.BLUE);
 			if(	MainViewController.pruebaTile != null) {
 				MainViewController.pruebaTile.add(player, columna, fila);
+			    System.out.println("1");
+
 			}else {
 				System.out.println("player es null");
 			}
@@ -63,6 +66,8 @@ System.out.println("Se inicia la funcion");
 				box.setFill(Color.YELLOW);
 				if(MainViewController.pruebaTile != null) {
 					MainViewController.pruebaTile.add(box, columna, fila);
+				    System.out.println("3");
+
 				}else {
 					System.out.println("box es null");
 				}
@@ -74,6 +79,8 @@ System.out.println("Se inicia la funcion");
 				Void.setFill(Color.TRANSPARENT);
 				if(MainViewController.pruebaTile != null) {
 					MainViewController.pruebaTile.add(Void, columna, fila);
+				    System.out.println("4");
+
 				}else {
 					System.out.println(". es null");
 				}
