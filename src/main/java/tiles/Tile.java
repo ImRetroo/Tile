@@ -7,6 +7,10 @@ import javafx.scene.shape.Rectangle;
 public class Tile {
 	public static MainViewController mainView = new MainViewController();
 
+	
+	public static void mapa() {
+		
+	}
 	public static void tile(GridPane gridpane) {
 
 		System.out.println("Se inicia la funcion");
@@ -23,7 +27,29 @@ public class Tile {
 				##########
 				""";
 
-		String[] lineas = mapa.trim().split("\n");
+		
+		
+		String mapa1= """
+				##########
+				#........#
+				#........#
+				#b.......#
+				#........#
+				#........#
+				#........#
+				#........#
+				#........#
+				#........#
+				""";
+		
+		
+		
+		
+		
+		
+		
+		
+		String[] lineas = mapa1.trim().split("\n");
 
 		for (int fila = 0; fila < lineas.length; fila++) {
 			for (int columna = 0; columna < lineas[fila].length(); columna++) {
