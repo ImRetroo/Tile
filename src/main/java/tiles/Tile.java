@@ -31,15 +31,15 @@ public class Tile {
 		
 		String mapa1= """
 				##########
+				#.....N..#
+				#....EMO.#
+				#b....S..#
+				#........#
+				#p.......#
 				#........#
 				#........#
-				#b.......#
 				#........#
-				#........#
-				#........#
-				#........#
-				#........#
-				#........#
+				##########
 				""";
 		
 		
@@ -105,6 +105,72 @@ public class Tile {
 					} else {
 						System.out.println(". es null");
 					}
+					break;
+				
+				
+				case 'N':
+					Rectangle N = new Rectangle(60, 40);
+					N.setFill(Color.PINK);
+					if (gridpane != null) {
+						gridpane.add(N, columna, fila);
+						System.out.println("4");
+
+					} else {
+						System.out.println(". es null");
+					}
+				
+				
+					break;
+				case 'S':
+					Rectangle S = new Rectangle(60, 40);
+					S.setFill(Color.PINK);
+					if (gridpane != null) {
+						gridpane.add(S, columna, fila);
+						System.out.println("4");
+
+					} else {
+						System.out.println(". es null");
+					}
+					break;
+
+				case 'E':
+					Rectangle E = new Rectangle(60, 40);
+					E.setFill(Color.PINK);
+					if (gridpane != null) {
+						gridpane.add(E, columna, fila);
+						System.out.println("4");
+
+					} else {
+						System.out.println(". es null");
+					}
+					break;
+
+				case 'O':
+					Rectangle O = new Rectangle(60, 40);
+					O.setFill(Color.PINK);
+					if (gridpane != null) {
+						gridpane.add(O, columna, fila);
+						System.out.println("4");
+
+					} else {
+						System.out.println(". es null");
+					}
+					break;
+
+				case 'M':
+					Rectangle M = new Rectangle(60, 40);
+					M.setFill(Color.VIOLET);
+					if (gridpane != null) {
+						gridpane.add(M, columna, fila);
+						System.out.println("4");
+
+					} else {
+						System.out.println(". es null");
+					}
+					break;
+
+					
+			
 
 				}
 
