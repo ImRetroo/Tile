@@ -1,93 +1,50 @@
 package tiles;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 
 public class MainViewController implements Initializable {
 
-	
-	
-
-
-    @FXML
-    private BorderPane mainView;
-
+	@FXML
+	private BorderPane mainView;
 
 	@FXML
-	 static GridPane pruebaTile;
+	private GridPane pruebaTile;
 
-
-    
-    
-    
-	@Override
-	public void initialize(URL location, ResourceBundle resources){
-	    pruebaTile = new GridPane();
-
+	public MainViewController() {
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/MainView.fxml"));
+		loader.setController(this);
 		try {
-			Tile.tile();
-		} catch (Exception e) {
+			loader.load();
+		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		Tile.tile(pruebaTile);
+	}
 
-
-
-
-	public static GridPane getPruebaTile() {
+	public GridPane getPruebaTile() {
 		return pruebaTile;
 	}
-
-
-
-
-
-	public static void setPruebaTile(GridPane pruebaTile) {
-		MainViewController.pruebaTile = pruebaTile;
-	}
-
-
-
-
 
 	public BorderPane getMainView() {
 		return mainView;
 	}
 
-
-
-
-
 	public void setMainView(BorderPane mainView) {
 		this.mainView = mainView;
 	}
 
-
-
-
-
-	
-
-
-
-
-
-	
-	
-
 }
-
-
-
-
-
-
-
-
