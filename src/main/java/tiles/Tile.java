@@ -5,51 +5,60 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 public class Tile {
-	public static MainViewController mainView = new MainViewController();
+
+	static String mapa0 = """
+			##########
+			#........#
+			#........#
+			#b.......#
+			#........#
+			#........#
+			#........#
+			#........#
+			#........#
+			##########
+			""";
 
 	
-	public static void mapa() {
-		
-	}
-	public static void tile(GridPane gridpane) {
+	
+	static String mapa1= """
+			##########
+			#.....N..#
+			#....EMO.#
+			#b....S..#
+			#........#
+			#p.......#
+			#........#
+			#........#
+			#........#
+			##########
+			""";
+	
+	
+	static String mapa2= """
+			##########
+			#_....####
+			#.......=#
+			#....#####
+			#....#####
+			#p...#####
+			#....#####
+			#...b....#
+			##..#....#
+			##########
+			""";
+	
+	
 
-		System.out.println("Se inicia la funcion");
-		String mapa = """
-				##########
-				#........#
-				#........#
-				#b.......#
-				#........#
-				#........#
-				#........#
-				#........#
-				#........#
-				##########
-				""";
+	public static Map tile(String mapa) {
 
 		
 		
-		String mapa1= """
-				##########
-				#.....N..#
-				#....EMO.#
-				#b....S..#
-				#........#
-				#p.......#
-				#........#
-				#........#
-				#........#
-				##########
-				""";
+		
+		Map map = new Map(10, 10, 1);
 		
 		
-		
-		
-		
-		
-		
-		
-		String[] lineas = mapa1.trim().split("\n");
+		String[] lineas = mapa.trim().split("\n");
 
 		for (int fila = 0; fila < lineas.length; fila++) {
 			for (int columna = 0; columna < lineas[fila].length(); columna++) {
@@ -60,38 +69,28 @@ public class Tile {
 				case '#':
 					Rectangle obstaculo = new Rectangle(60, 40);
 					obstaculo.setFill(Color.BLACK);
-					if (gridpane != null) {
-						gridpane.add(obstaculo, columna, fila);
-						System.out.println("0");
-					} else {
+						map.add(obstaculo, columna, fila);
 						System.out.println("obs es null");
-					}
+					
 					break;
 
 				case 'p':
 
 					Rectangle player = new Rectangle(60, 40);
 					player.setFill(Color.BLUE);
-					if (gridpane != null) {
-						gridpane.add(player, columna, fila);
-						System.out.println("1");
+						map.add(player, columna, fila);
 
-					} else {
-						System.out.println("player es null");
-					}
+					
 					break;
 
 				case 'b':
 
 					Rectangle box = new Rectangle(60, 40);
 					box.setFill(Color.YELLOW);
-					if (gridpane != null) {
-						gridpane.add(box, columna, fila);
+						map.add(box, columna, fila);
 						System.out.println("3");
 
-					} else {
-						System.out.println("box es null");
-					}
+					
 
 					break;
 
@@ -169,12 +168,39 @@ public class Tile {
 					}
 					break;
 
+				case '_':
+					Rectangle finBox = new Rectangle(60,40);
+					finBox.setFill(Color.GREEN);
 					
+					if (gridpane != null) {
+						gridpane.add(finBox, columna, fila);
+						System.out.println("4");
+
+					} else {
+						System.out.println(". es null");
+					}
+					break;
+					
+				case  '=':
+					Rectangle win = new Rectangle(60,40);
+					win.setFill(Color.BROWN);
+					
+					if (gridpane != null) {
+						gridpane.add(win, columna, fila);
+						
+						System.out.println("4");
+
+					} else {
+						System.out.println(". es null");
+					}
+					break;
 			
 
 				}
 
 			}
-		}
+		}			
+		return map;
+
 	}
 }

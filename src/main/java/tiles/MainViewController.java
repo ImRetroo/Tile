@@ -30,9 +30,9 @@ public class MainViewController implements Initializable {
 		}
 	}
 
-	@Override
+	@Override//este es el mapa 1
 	public void initialize(URL location, ResourceBundle resources) {
-		Tile.tile(pruebaTile);
+		Tile.tile(pruebaTile, Tile.mapa2);
 	}
 
 	public GridPane getPruebaTile() {

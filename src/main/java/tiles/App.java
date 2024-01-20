@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 public class App extends Application {
@@ -14,9 +15,19 @@ public class App extends Application {
 
 	        // Configurar el escenario principal
 	        primaryStage.setTitle("Prueba Tile");
-	        primaryStage.setScene(new Scene(mainViewController.getMainView()));
+	        
+		      Scene  scene = new Scene(mainViewController.getMainView());
 
+	        primaryStage.setScene(scene);
 	        primaryStage.show();
+	        scene.setOnMouseClicked(event -> {
+	        
+	        Tile.tile(mainViewController.getPruebaTile(), Tile.mapa2);
+	        System.out.println("Funciona el click");
+	        
+	        	
+	        });
+	        
 	}
 
 }
